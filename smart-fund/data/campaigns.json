@@ -1,0 +1,35 @@
+[
+  {
+    "id": "seed-1",
+    "title": "Clean Water for Rampur Village",
+    "description": "Install a solar-powered borewell and filtration unit so 400 families have safe drinking water year-round.",
+    "category": "Community",
+    "creator": "Asha Verma",
+    "goal": 250000,
+    "raised": 142500,
+    "createdAt": "2026-09-02T09:00:00.000Z",
+    "donations": [{ "name": "Rohan", "amount": 5000, "message": "Happy to help!", "at": "2026-09-10T10:00:00.000Z" }]
+  },
+  {
+    "id": "seed-2",
+    "title": "Laptops for First-Gen Students",
+    "description": "Provide 30 refurbished laptops to first-generation college students who currently share a single computer lab.",
+    "category": "Education",
+    "creator": "Kabir Singh",
+    "goal": 120000,
+    "raised": 96000,
+    "createdAt": "2026-09-15T09:00:00.000Z",
+    "donations": []
+  },
+  {
+    "id": "seed-3",
+    "title": "Rescue Shelter Winter Fund",
+    "description": "Heated kennels, blankets and vet check-ups for 60 rescued street dogs through the winter months.",
+    "category": "Animals",
+    "creator": "Meera Joshi",
+    "goal": 80000,
+    "raised": 12000,
+    "createdAt": "2026-10-10T09:00:00.000Z",
+    "donations": []
+  }
+]

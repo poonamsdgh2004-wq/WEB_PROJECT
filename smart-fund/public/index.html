@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Fund</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap bar">
+      <a class="brand" href="/">Smart Fund</a>
+      <button class="btn primary" id="openCreate">Start a campaign</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="summary" aria-label="Overview">
+      <h1>Small gifts, <span id="statRaised">₹0</span> raised so far.</h1>
+      <p class="muted"><span id="statCount">0</span> campaigns • <span id="statDonors">0</span> donations</p>
+    </section>
+
+    <section class="tools" aria-label="Filter campaigns">
+      <input type="search" id="search" placeholder="Search campaigns" aria-label="Search campaigns">
+      <select id="filterCat" aria-label="Filter by category"><option value="">All categories</option></select>
+      <select id="sort" aria-label="Sort campaigns">
+        <option value="new">Newest</option>
+        <option value="progress">Closest to goal</option>
+        <option value="raised">Most raised</option>
+      </select>
+    </section>
+
+    <section id="grid" class="grid" aria-live="polite"></section>
+  </main>
+
+  <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+
+  <dialog id="createDlg">
+    <form id="createForm" novalidate>
+      <h2>Start a campaign</h2>
+      <label>Title<input name="title" maxlength="80" required><small class="err"></small></label>
+      <label>Your name<input name="creator" maxlength="50" required><small class="err"></small></label>
+      <div class="row">
+        <label>Category<select name="category" id="catSelect" required></select><small class="err"></small></label>
+        <label>Goal (₹)<input name="goal" type="number" min="1000" step="1" inputmode="numeric" required><small class="err"></small></label>
+      </div>
+      <label>Story<textarea name="description" rows="4" maxlength="600" required></textarea><small class="err"></small></label>
+      <div class="actions">
+        <button type="button" class="btn ghost" data-close>Cancel</button>
+        <button class="btn primary" type="submit">Publish campaign</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="donateDlg">
+    <form id="donateForm" novalidate>
+      <h2 id="donateTitle">Donate</h2>
+      <div class="chips" id="chips">
+        <button type="button" data-amt="100">₹100</button>
+        <button type="button" data-amt="500">₹500</button>
+        <button type="button" data-amt="1000">₹1,000</button>
+        <button type="button" data-amt="5000">₹5,000</button>
+      </div>
+      <label>Amount (₹)<input name="amount" type="number" min="10" step="1" inputmode="numeric" required><small class="err"></small></label>
+      <label>Your name (optional)<input name="name" maxlength="50"><small class="err"></small></label>
+      <label>Message (optional)<textarea name="message" rows="2" maxlength="200"></textarea><small class="err"></small></label>
+      <div class="actions">
+        <button type="button" class="btn ghost" data-close>Cancel</button>
+        <button class="btn primary" type="submit">Donate now</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
